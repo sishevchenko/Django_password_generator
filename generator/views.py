@@ -10,7 +10,6 @@ def home(request):
 
 
 def password(request):
-
     characters = ''
 
     if request.GET.get('uppercase'):
@@ -22,20 +21,22 @@ def password(request):
     if request.GET.get('special'):
         characters += '!@#$%^&*?№'
 
+    if len(characters) == 0:
+        return render(request, "password.html", {'password': "Missing characters to generate password. Return to the "
+                                                             "main page and select the character set for the "
+                                                             "generator."})
 
-    length = int(request.GET.get('length',12))
+    length = int(request.GET.get('length', 12))
 
-    thepassword = []
-
+    password = []
 
     for _ in range(length):
-        thepassword.append(random.choice(characters))
+        password.append(random.choice(characters))
 
-    thepassword = ''.join(thepassword)
+    password = ''.join(password)
 
-    return render(request, "password.html", {'password': thepassword})
+    return render(request, "password.html", {'password': password})
+
 
 def self_info(request):
     return render(request, "self_info.html")
-
-
