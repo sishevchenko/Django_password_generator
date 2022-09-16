@@ -1,36 +1,34 @@
-<h1>Password Generator</h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-<form action="password">
-    <select name="length">
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12" selected="selected">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-    </select>
-
-    <br>
-    <input type="checkbox" name="uppercase"> Uppercase
-    <br>
-    <input type="checkbox" name="lowercase"> Lowercase
-    <br>
-    <input type="checkbox" name="numbers"> Numbers
-    <br>
-    <input type="checkbox" name="special"> Special Characters
-    <br>
-
-    <input type="submit" value="Generate Password">
-
-    <br>
-    <a href="{%url 'self_info'%}">About me</a>
-    <br>
-
-</form>
-
-
-
+<div class="container text-center">
+    <h1>Password Generator</h1>
+    <form action="password">
+        <select name="length">
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12" selected="selected">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="14">15</option>
+        </select> Length
+        <br>
+        <input type="checkbox" name="uppercase"> Uppercase
+        <br>
+        <input type="checkbox" name="lowercase"> Lowercase
+        <br>
+        <input type="checkbox" name="numbers"> Numbers
+        <br>
+        <input type="checkbox" name="special"> Special Characters
+        <br>
+        <input type="submit" value="Generate Password" class="btn btn-primary">
+        <br>
+        <br>
+        <a class="btn btn-warning" href="{%url 'self_info'%}">About me</a>
+        <br>
+    </form>
+</div>

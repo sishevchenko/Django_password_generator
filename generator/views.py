@@ -22,9 +22,7 @@ def password(request):
         characters += '!@#$%^&*?№'
 
     if len(characters) == 0:
-        return render(request, "password.html", {'password': "Missing characters to generate password. Return to the "
-                                                             "main page and select the character set for the "
-                                                             "generator."})
+        return render(request, "missing.html")
 
     length = int(request.GET.get('length', 12))
 
